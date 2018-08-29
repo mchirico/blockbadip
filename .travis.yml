@@ -1,0 +1,20 @@
+dist: trusty
+sudo: false
+matrix:
+  include:
+  - language: python
+    python: 3.6
+    before_script:
+    - cd Bridge/python
+    script:
+    - export PYTHONPATH="."
+    - pytest -v tests/tests_block_bad_ip.py
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
+    - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+before_install:
+- echo 'before'
+
+
+
+
