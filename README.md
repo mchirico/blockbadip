@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/mchirico/blockbadip.svg?branch=develop)](https://travis-ci.org/mchirico/blockbadip)
+[![codecov](https://codecov.io/gh/mchirico/blockbadip/branch/develop/graph/badge.svg)](https://codecov.io/gh/mchirico/blockbadip)
 
 # blockbadip
 Python - Block IPs based on /var/log/mail.log messages
