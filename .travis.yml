@@ -7,8 +7,9 @@ matrix:
     before_script:
     - pip install -r requirements.txt
     script:
-    - export PYTHONPATH="."
-    - pytest -v tests/tests_block_bad_ip.py
+    - export PYTHONPATH="${PWD}/src"
+    - cd tests
+    - pytest -v tests_block_bad_ip.py
 after_success:
     - bash <(curl -s https://codecov.io/bash)
     - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"

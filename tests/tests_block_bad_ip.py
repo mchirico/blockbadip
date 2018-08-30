@@ -1,7 +1,7 @@
 from unittest.mock import patch
 from unittest import TestCase
 
-from src.block_bad_auth import read_process_file, log_ip_addresses, \
+from block_bad_auth import read_process_file, log_ip_addresses, \
     PAST_IP_LOG, \
     run_process, WHITE_IPS
 
@@ -10,8 +10,8 @@ class BlockBadAuth(TestCase):
     TEST_MAIL_LOG = 'fixtures/mail.log'
     TEST_PAST_IP_LOG = 'fixtures/past_blocked_ips.log'
 
-    @patch("src.block_bad_auth.MAIL_LOG", TEST_MAIL_LOG)
-    @patch("src.block_bad_auth.PAST_IP_LOG", TEST_PAST_IP_LOG)
+    @patch("block_bad_auth.MAIL_LOG", TEST_MAIL_LOG)
+    @patch("block_bad_auth.PAST_IP_LOG", TEST_PAST_IP_LOG)
     def setUp(self):
         self.ip_set = read_process_file(self.TEST_MAIL_LOG)
         log_ip_addresses(self.ip_set)
@@ -52,8 +52,8 @@ class MainRun(TestCase):
         def communicate():
             return ['response', 'error']
 
-    @patch("src.block_bad_auth.MAIL_LOG", TEST_MAIL_LOG)
-    @patch("src.block_bad_auth.PAST_IP_LOG", TEST_PAST_IP_LOG)
+    @patch("block_bad_auth.MAIL_LOG", TEST_MAIL_LOG)
+    @patch("block_bad_auth.PAST_IP_LOG", TEST_PAST_IP_LOG)
     @patch("subprocess.Popen", return_value=MyPopen)
     def setUp(self,
               Popen):
