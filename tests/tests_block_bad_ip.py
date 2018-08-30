@@ -65,7 +65,6 @@ class MainRun(TestCase):
         run_process()
         self.Popen = Popen
 
-
     def tearDown(self):
         with open(self.TEST_PAST_IP_LOG, 'w') as f:
             f.write('')
@@ -105,14 +104,3 @@ class MainRun(TestCase):
              '113.121.42.1', '182.101.61.159', '188.126.223.106', '5.188.9.40',
              '201.187.101.222', '66.163.190.61',
              '121.237.140.253'])
-
-
-
-
-
-
-
-
-
-
-

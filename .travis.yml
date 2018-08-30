@@ -5,9 +5,11 @@ matrix:
   - language: python
     python: 3.6
     before_script:
-    - pip install -r requirements.txt
+    - echo 'Nothing to add, yet'
     script:
     - export PYTHONPATH="${PWD}/src"
+    - pycodestyle --statistics -qq tests/tests_block_bad_ip.py
+    - pycodestyle --statistics -qq src/block_bad_auth.py
     - cd tests
     - pytest -v tests_block_bad_ip.py
 after_success:

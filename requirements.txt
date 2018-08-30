@@ -1,9 +1,11 @@
 atomicwrites==1.2.0
 attrs==18.1.0
+coverage==4.5.1
 mock==2.0.0
 more-itertools==4.3.0
 pbr==4.2.0
 pluggy==0.7.1
 py==1.6.0
+pycodestyle==2.4.0
 pytest==3.7.3
 six==1.11.0
