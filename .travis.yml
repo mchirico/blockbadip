@@ -5,7 +5,7 @@ matrix:
   - language: python
     python: 3.6
     before_script:
-    - echo 'Nothing to add, yet'
+    - pip install codecov
     script:
     - export PYTHONPATH="${PWD}/src"
     - pycodestyle --statistics -qq tests/tests_block_bad_ip.py
@@ -14,6 +14,7 @@ matrix:
     - pytest -v tests_block_bad_ip.py
 after_success:
     - bash <(curl -s https://codecov.io/bash)
+    - codecov
     - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 before_install:
 - echo 'before'
