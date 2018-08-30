@@ -28,7 +28,8 @@ pip install -r requirements.txt
 
 cd blockbadip
 
-export PYTHONPATH="."
-pytest -v tests/tests_block_bad_ip.py
+export PYTHONPATH="${PWD}/src"
+cd tests
+pytest -v tests_block_bad_ip.py
 
 ```
