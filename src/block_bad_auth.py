@@ -12,7 +12,7 @@ import shlex
 
 MAIL_LOG = '/var/log/mail.log'
 PAST_IP_LOG = '/var/log/past_blocked_ips.log'
-WHITE_IPS = set(['104.236.87.120',
+WHITE_IPS = set(['108.52.226.221',
                  '104.236.87.120',
                  '45.55.125.83',
                  '104.198.21.57',
