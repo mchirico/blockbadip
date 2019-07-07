@@ -3,6 +3,8 @@
 Code location:
 https://github.com/mchirico/blockbadip
 
+May need to run
+  netfilter-persistent save
 
 """
 
@@ -70,7 +72,7 @@ def read_past_log_into_set():
 def run_ufw_commands(ips):
     for i in ips:
         if len(i) > 6:
-            cmd = "ufw insert 1 deny from {}".format(i)
+            cmd = "iptables -I INPUT 50 -s {} -j DROP".format(i)
             bash_cmd(cmd)
     return
 
