@@ -12,8 +12,11 @@ import shlex
 
 MAIL_LOG = '/var/log/mail.log'
 PAST_IP_LOG = '/var/log/past_blocked_ips.log'
-WHITE_IPS = set(['108.52.226.221',
+WHITE_IPS = set(['74.103.161.10',
+                 '69.241.19.12',
                  '104.236.87.120',
+                 '100.14.26.43',
+                 '104.197.33.112',
                  '45.55.125.83',
                  '104.198.21.57',
                  '100.34.255.15',
@@ -92,3 +95,4 @@ def run_process():
 
 if __name__ == '__main__':
     run_process()
+    # m = bash_cmd("date > ~/junk.txt")
