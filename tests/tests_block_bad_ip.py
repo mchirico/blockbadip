@@ -81,7 +81,7 @@ class MainRun(TestCase):
         one_ufw_cmd = list_of_calls[0][1][0]
         assert 'bash' in one_ufw_cmd
         assert '-c' in one_ufw_cmd
-        assert one_ufw_cmd[2].find('ufw insert 1 deny from ') == 0
+        assert one_ufw_cmd[2].find('iptables -I INPUT 50') == 0
 
     def test_main(self):
         ips_blocked = read_process_file(self.TEST_MAIL_LOG)
